@@ -200,8 +200,6 @@ The following inputs can be used as `step.with` keys
 | Name           | Type        | Description                                                                                                                                                        |
 |----------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `builder`      | String      | Builder instance (see [setup-buildx](https://github.com/docker/setup-buildx-action) action)                                                                        |
-| `workdir`      | String      | Working directory of execution                                                                                                                                     |
-| `source`       | String      | Context to build from. Can be either local (`.`) or a [remote bake definition](https://docs.docker.com/build/bake/remote-definition/)                              |
 | `allow`        | List/CSV    | Allow build to access specified resources (e.g., `network.host`)                                                                                                   |
 | `call`         | String      | Set method for evaluating build (e.g., check)                                                                                                                      |
 | `files`        | List/CSV    | List of [bake definition files](https://docs.docker.com/build/customize/bake/file-definition/)                                                                     |
@@ -212,6 +210,7 @@ The following inputs can be used as `step.with` keys
 | `push`         | Bool        | Push is a shorthand for `--set=*.output=type=registry` (default `false`)                                                                                           |
 | `sbom`         | Bool/String | [SBOM](https://docs.docker.com/build/attestations/sbom/) is a shorthand for `--set=*.attest=type=sbom`                                                             |
 | `set`          | List        | List of [targets values to override](https://docs.docker.com/engine/reference/commandline/buildx_bake/#set) (e.g., `targetpattern.key=value`)                      |
+| `source`       | String      | Context to build from. Can be either local to specify the working directory or a [remote bake definition](https://docs.docker.com/build/bake/remote-definition/)   |
 | `targets`      | List/CSV    | List of bake targets (`default` target used if empty)                                                                                                              |
 | `github-token` | String      | API token used to authenticate to a Git repository for [remote definitions](https://docs.docker.com/build/bake/remote-definition/) (default `${{ github.token }}`) |
 

@@ -450,11 +450,11 @@ describe('getArgs', () => {
           provenance: inp.provenance,
           push: inp.push,
           sbom: inp.sbom,
-          source: inp.source,
+          source: inp.source.remoteRef,
           targets: inp.targets
         },
         {
-          cwd: inp.workdir
+          cwd: inp.source.workdir,
         }
       );
       const res = await context.getArgs(inp, definition, toolkit);
